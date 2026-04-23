@@ -1,0 +1,1158 @@
+<<<<< this file contains your perchance lists first, and your HTML code underneath it >>>>>
+
+
+
+dynamicImport = {import:dynamic-import-plugin}
+//mapMaker = {import:ai-generated-fantasy-maps}
+  //spaceMap = {import:alterkineredeux}
+  //defaultP
+  //  [spaceMap.composition] terrain
+//https://perchance.org/designer-animators-sentence
+worldseed = {import:https://cero-kurn.github.io/world-seed-system/world-seed-system}
+
+
+$meta
+  header 
+    background = url(https://user-uploads.perchance.org/file/7fd37c00a22f319597c21d3ec3bbf650.jp-g) //this is the line that says forum, etc. can change to a color or different picture
+    //mode = minimal// this hides the menu bar on the page
+
+
+//type = {import:typewriter-plugin} //[type(text, speed, delay)]
+generateText = {import:ai-text-plugin}
+ai_image_import = {import:text-to-image-plugin}
+background = {import:background-image-plugin}
+fullscreenButton = {import:fullscreen-button-plugin} 
+numberSet = {import:number-set-plugin}
+randomInteger = {import:random-integer-plugin}
+icon = {import:rpg-icon-plugin}
+favicon = {import:favicon-plugin}
+colorPal = {import:massive-color-list}
+downloadtext = {import:downloadtext} 
+//https://perchance.org/downloadtext#edit
+//https://perchance.org/planegea-npc-generator#edit
+//https://perchance.org/ai-generated-sci-fi-portraits
+//TESTING = {import:planetforge-debug-layout}
+
+//the following may be used later
+//speak = {import:text-to-speech-plugin}
+//remember = {import:remember-plugin}
+//This is a template if I want to change aspects of the Icon
+//output = [icon("icon used", "color:white; background:black; padding:2px")]
+layoutMaker = {import:responsive-layout-maker-plugin}
+
+layoutScreen
+  container
+    id = mainLayout
+  grid
+    mobile
+      a a a a
+      g g d d
+      b c d d
+      b c d d
+      e e e e
+      f f f f
+      h h h h
+    
+    default
+      min-width: 600px
+      . . a . 
+      g g d f
+      b c d f
+      b e e h
+
+    mobile
+      max-width: 599px
+      a a a a
+      g g g g
+      d d d d
+      b . . c
+      e e e e
+      f f f f
+      h h h h
+      
+  columnSizes = 1fr 1fr 3fr 2fr;
+  style = height:100vh; 
+
+
+  areas
+    
+    a
+      content = <font size=52px; color = "crimson"; face = 'Enter Sansman'>[pageTitle]</font size=40px; color = "crimson"; face = 'Enter Sansman'>
+      ///move below accordian/right of planet summary if possible <p><h4>[pageSubtitle]</h4>
+
+
+    b
+      content = <font face = 'TS Kirt', sans-serif;><pre style="text-align:left; overflow: hidden;"><font color=white><b><b>Mass</b>: [mOut = massOutput.selectOne.consumableList]<br><b>Gravity</b>: [gOut = gravOutput.selectOne.consumableList]<br><b>Escape Velocity</b>: [eVel = escapeVelocity.selectOne.consumableList]<br><b>Rotational Period</b>: [rPer = rotationalPeriod.selectOne.consumableList]<br><b>Orbital Period</b>: [oPer = orbitalPeriod.selectOne.consumableList]<br><b>Axial Tilt</b>: [aTilt = axialTilt.selectOne.consumableList]</b><br><B>[oAtmos]</li></dd></ul><br><B>[a]% Water</B> ([Ice]% Ice)<br>▪	[c]% [wtOne]<br>▪	[d]% [wtTwo]<br>▪	[e]% [wtThree]<br>▪	Other<br><b>[b]% Landmass</b><br>▪	[g]% [ltOne]<br>▪	[h]% [ltTwo]<br>▪	[i]% [ltThree]<br>▪	Other</font color=white></B></font color=white>
+
+ 
+    c 
+      content = <font face = 'TS Kirt', sans-serif;><pre style="text-align:left; overflow: hidden;"><font color=white><b><b>Special Features</b><br>▪	[sFeat]<br><b>Population</b>: [pop]<br><b>Tech Level</b>: [tlvl]<br><b>Economy</b><br>▪	<b>Resources</b>: [res]<br>▪	<b>Main Import</b>: [eOut]<br>▪	<b>Main Export</b>: [eOut2]<br>▪	<b>Trade</b>: [eTrad]<br><b>Installation{s}</b><br>▪	[install]<br><b>Affiliation</b>: [affil]<br><b>Foreign Relations</b>: [fRelat]</font color=white></font face = 'TS Kirt', sans-serif;>
+     
+		d
+      content = [outputWorldImg] //[ai_image_import(outputWorldImg)]
+      
+		e
+      content = Vivamus fringilla dui purus, in lacinia ex varius sit amet. Sed vel lacinia est. Vivamus dolor sem, aliquam a libero eget, lacinia aliquam turpis. Nunc euismod enim lorem, a efficitur mauris ultrices in. In vitae dolor a felis molestie hendrerit in quis dolor. Morbi id lacus at mi maximus auctor. Vestibulum eget tristique dolor, vitae feugiat arcu. Ut sodales enim augue, ac cursus erat egestas nec. Integer eget massa quis metus mattis tincidunt eu sit amet neque. {1-100000000} [pName]
+      //<font face = 'TS Kirt', sans-serif;><pre style="text-align:left; overflow-y:scroll; scrollbar-color: crimson black; scrollbar-width: thin;overflow-wrap:break-word; height:100px; writing-mode:horizontal-tb;"><font color=white></b>[generateText(PlanetarySummaryPrompt)]</font color=white></font face = 'TS Kirt', sans-serif;>
+ 
+    f
+      content = [accordion]
+      
+      
+    g 
+      content = <font size=30, color="crimson", face='Enter Sansman'>[pName = name.selectOne.sentenceCase]</font size=30>
+
+    h
+      content = <font color="crimson"; font size=5px; font face = 'Enter Sansman', sans-serif;><pre style="text-align:left"><button><button id=EXPLORE button onclick="update"> EXPLORE </button><button id="printBtn" onclick="prepareForPrint()" style="margin-left: 10px;"> PRINT </button></button></font face = 'Enter Sansman', sans-serif;><br>
+
+
+
+  
+/////////////////////////////    
+//----content a----//
+/////////////////////////////
+pageTitle = ALTERKINE REDEUX
+pageSubtitle = PlanetForge is a tool for generating planets and solar systems for your tabletop RPGs<p>Generate unique planets with detailed atmospheric, ecological, and hydrological properties. Explore strange new worlds with fascinating points of interest.
+
+/////////////////////////////
+//----content b----//
+/////////////////////////////
+
+//OTHER SYSTEM BODIES???
+
+composition
+  [oAtmos=outputAtmos.selectOne.consumableList]<br>[set = numberSet(2), ""] [a=set.n1]% Water, [Ice = randomInteger(1, 100)]% Ice, [b=set.n2]% Landmass, [set = numberSet(3, randomInteger(95,99), "4,2,1", "n1 > n2+n3 && n2 > n3"), ""][c=set.n1]% [wtOne = terrainWater.selectOne.consumableList], [d=set.n2]% [wtTwo = terrainWater.selectOne.consumableList], [e=set.n3]% [wtThree = terrainWater.selectOne.consumableList],  [wtFour = "Additional Forms of Water"] [set = numberSet(3, randomInteger(95,99), "4,2,1", "n1 > n2+n3 && n2 > n3"), ""][g=set.n1]% [ltOne = terrainLand.selectOne.consumableList], [h=set.n2]% [ltTwo = terrainLand.selectOne.consumableList], [i=set.n3]% [ltThree = terrainLand.selectOne.consumableList], [ltFour = "Additional Forms of Land"]
+
+outputAtmos
+  <b>Corrosive Atmosphere</b><br>▪	47% Argon<br>▪	33% Nitrogen<br>▪	17% Ammonia <br>▪	Other
+  <b>Corrosive Atmosphere</b><br>▪	48% Argon<br>▪	22% Oxygen<br>▪	15% Carbon Dioxide<br>▪	13% Sulfur Dioxide <br>▪	Other
+  <b>Dense Breathable Atmosphere</b><br>▪	59% Nitrogen<br>▪	28% Oxygen<br>▪	9% Carbon Dioxide<br>▪	1% Argon<br>▪	Other^3
+  <b>Dense Breathable Atmosphere</b><br>▪	81% Nitrogen<br>▪	19% Oxygen<br>▪	Other^3
+  <b>Dense Corrosive Atmosphere</b><br>▪	71% Ammonia<br>▪	20% Oxygen<br>▪	6% Sulfur Dioxide<br>▪	1% Hydrogen<br>▪	1% Argon<br>▪	Other
+  <b>Dense Reducing Atmosphere</b><br>▪	38% Argon<br>▪	36% Nitrogen<br>▪	25% Oxygen<br>▪	Other^2
+  <b>Dense Reducing Atmosphere</b><br>▪	39% Carbon Dioxide<br>▪	37 % Oxygen<br>▪	23% Methane<br>▪	Other^2
+  <b>Dense Reducing Atmosphere</b><br>▪	66% Carbon Dioxide<br>▪	22% Oxygen<br>▪	11% Sulfur Dioxide<br>▪	Other^2
+  <b>Dense Reducing Atmosphere</b><br>▪	80% Carbon Dioxide<br>▪	19% Oxygen<br>▪	Other^2
+  <b>Dense Toxic Atmosphere</b><br>▪	57% Sulfur Dioxide<br>▪	21% Oxygen<br>▪	17% Argon<br>▪	3% Carbon Dioxide<br>▪	Other
+  <b>Dense Toxic Atmosphere</b><br>▪	61% Nitrogen<br>▪	27% Oxygen<br>▪	11% Carbon Dioxide<br>▪	Other
+  <b>Dense Toxic Atmosphere</b><br>▪	64% Nitrogen<br>▪	21% Oxygen<br>▪	Other
+  <b>Dense Toxic Atmosphere</b><br>▪	66% Argon<br>▪	18% Oxygen<br>▪	12% Sulfur Dioxide<br>▪	3% Carbon Dioxide<br>▪	Other
+  <b>Dense Toxic Atmosphere</b><br>▪	73% Argon<br>▪	26% Nitrogen<br>▪	Other
+  <b>Dense Toxic Atmosphere</b><br>▪	73% Sulfur Dioxide<br>▪	19% Oxygen<br>▪	6% Argon<br>▪	Other
+  <b>Standard Atmosphere</b><br>▪	66% Oxygen<br>▪	15% Nitrogen<br>▪	16% Carbon Dioxide<br>▪	Other^3
+  <b>Standard Breathable Atmosphere</b><br>▪	73% Nitrogen<br>▪	26% Oxygen<br>▪	Other^4
+  <b>Standard Breathable Atmosphere</b><br>▪	81% Nitrogen<br>▪	18% Oxygen<br>▪	Other^4
+  <b>Standard Corrosive</b><br>▪	47% Argon<br>▪	33% Nitrogen<br>▪	17% Ammonia<br>▪	Other
+  <b>Standard Reducing Atmosphere</b><br>▪	41% Carbon Dioxide<br>▪	31% Oxygen<br>▪	27% Methane<br>▪	Other^2
+  <b>Standard Reducing Atmosphere</b><br>▪	51% Methane<br>▪	20% Oxygen<br>▪	19% Carbon Dioxide<br>▪	9% Sulfur Dioxide<br>▪	Other^2
+  <b>Standard Toxic Atmosphere</b><br>▪	57% Sulfur Dioxide<br>▪	24% Argon<br>▪	17% Oxygen<br>▪	Other
+  <b>Standard Toxic Atmosphere</b><br>▪	72% Argon<br>▪	27% Oxygen<br>▪	Other
+  <b>Standard Toxic Atmosphere</b><br>▪	77% Sulfur Dioxide<br>▪	22% Oxygen<br>▪	Other
+  <b>Thin Breathable Atmosphere</b><br>▪	51% Nitrogen<br>▪	27% Oxygen<br>▪	20% Argon<br>▪	Other^2
+  <b>Thin Breathable Atmosphere</b><br>▪	70% Nitrogen<br>▪	26% Oxygen<br>▪	3% Sulfur Dioxide<br>▪	Other^2
+  <b>Thin Reducing Atmosphere</b><br>▪	51% Methane<br>▪	30% Oxygen<br>▪	18% Nitrogen<br>▪	Other^2
+  <b>Thin Toxic Atmosphere</b><br>▪	30% Carbon Dioxide<br>▪	29% Nitrogen<br>▪	20% Oxygen<br>▪	19% Argon<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	38% Nitrogen<br>▪	36% Sulfur<br>▪	24% Oxygen<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	39% Oxygen<br>▪	38% Nitrogen<br>▪	21% Sulfur Dioxide<br>▪	1% Methane<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	48% Argon<br>▪	22% Oxygen<br>▪	15% Carbon Dioxide<br>▪	13% Sulfur Dioxide<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	54% Nitrogen<br>▪	24% Sulfur Dioxide<br>▪	21% Oxygen<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	55% Sulfur Dioxide<br>▪	23% Oxygen<br>▪	21% Argon<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	57% Sulfur Dioxide<br>▪	22% Carbon Dioxide<br>▪	20 % Oxygen<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	58% Nitrogen<br>▪	26% Oxygen<br>▪	15% Sulfur Dioxide<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	82% Argon<br>▪	17% Oxygen<br>▪	Other
+  <b>Thin Toxic Atmosphere</b><br>▪	84% Argon<br>▪	15% Oxygen<br>▪	Other
+  <b>Trace Breathable Atmosphere</b><br>▪	59% Argon<br>▪	25% Nitrogen<br>▪	14% Oxygen<br>▪	Other^4
+atmosOutput
+  [outputAtmos]
+
+  
+terrainWater
+  Atolls
+  Basins
+  Bayous
+  Bays
+  Bogs
+  Brookes
+  Canals
+  Capes
+  Channels
+  Coves
+  Deltas
+  Everglades
+  Fens
+  Fjords
+  Geysers
+  Gulfs
+  Harbors
+  Lagoons
+  Lakes
+  Lochs
+  Langorous Ponds
+  Marshes
+  Mires
+  Moors
+  Morass
+  Oases
+  Oceans
+  Outlets
+  Ponds
+  Quagmires
+  Rivers
+  Seas
+  Sloughs
+  Sounds
+  Straits
+  Streams
+  Swamps
+  Waterfalls
+  Wetlands
+outputWater
+  [terrainWater]
+
+terrainIce
+  Arctic Wastes
+  Ice
+  Glaciers
+  Icebergs
+  Ice Flows
+  Ice Caps
+  Permafrost
+  Snowwastes
+  Tundra
+  Snowcaps
+outputIceTerrain
+  [terrainIce]
+
+
+terrainLand
+  Badlands
+  Beaches
+  Bluffs
+  Brushes
+  Buttes
+  Canyons
+  Caverns
+  Caves
+  Cliffs
+  Coastlands
+  Coasts
+  Coppices
+  Copses
+  Crags
+  Craters
+  Crevices
+  Dales
+  Deciduous Forests
+  Dells
+  Deserts
+  Downs
+  Dunes
+  Escarpments
+  Evergreen Forests
+  Farmlands
+  Flats
+  Foothills
+  Forests
+  Geothermal Areas
+  Glades
+  Gorges
+  Grasslands
+  Groves
+  Gulches
+  Gullies
+  Headlands
+  Heaths
+  High Mountains
+  High Passes
+  Hills
+  Hollows
+  Islands
+  Isthmus
+  Jungles
+  Knolls
+  Low Mountains
+  Lowlands
+  Meadows
+  Meads
+  Mesas
+  Mixed Forests
+  Mixed Woodlands
+  Mounds
+  Mountains
+  Outcroppings
+  Palm Forests
+  Peaks
+  Peninsulas
+  Plains
+  Plateaus
+  Prairies
+  Quicksand
+  Rainforests
+  Ravines
+  Rocks
+  Rocky Deserts
+  Sands
+  Sandy Deserts
+  Savannahs
+  Shrublands
+  Spinneys
+  Steppes
+  Taigas
+  Thickets
+  Tropical Areas
+  Vales
+  Valleys
+  Volcanoes
+  Wastelands
+  Wastes
+  Woodlands
+  Woods
+  Archipelagos
+outputLand
+  [terrainLand]
+
+
+
+/////////////////////////////
+//----content c----//
+////////////////////////////
+solarStats
+  Type: [pType = planetType.selectOne.consumableList], Composition: [oCompo = physicalComposition.selectOne.consumableList], Special Features: [sFeat = specialFeatures.consumableList.selectMany(1,3).joinItems("<br>▪	")], Population: [pop = population.selectOne.consumableList], Tech Level: [tlvl = techLevel.selectOne.consumableList], Resources [res = resources.selectOne.consumableList], Main Import [eOut = economyOutput.selectOne.consumableList], Main Export [eOut2 = economyOutput.selectOne.consumableList], Trade: [eTrad = economicTrade.selectOne.consumableList], Installations: [install = installations.consumableList.selectMany(1,3).titleCase.joinItems("<br>▪	")], Affiliation: [affil = affiliation.selectOne.consumableList], Foreign Relations: [fRelat = foreignRelations.selectOne.consumableList], 
+outputPlanet
+  solarStats
+
+axialTilt
+  {0-100}°
+axialOutput
+  [axialTilt]
+  
+planetType
+  Terrestrial^3
+  Desert
+  Dwarf
+  Forest
+  Frozen
+  Ice
+  Mesoplanet
+  Chthonian
+  Jovian
+  Neptunian
+  Ocean
+  Planetoid
+  Sheperd Moon
+  Super-Earth
+outputType
+  [planetType]
+  
+physicalComposition
+  Carbon
+  Ice
+  Magma
+  Metal
+  Mineral
+  Silicate
+  Ocean
+outputCompo
+  [physicalComposition]
+
+massOutput
+  {0.{5-9}{0-9}|{1-2}.{0-9}{0-9}^2} x Earth
+outputMass
+  [massOutput]
+
+gravOutput
+  {1.{0-5}{0-9}|0.{5-9}{0-9}} x Earth
+outputGrav
+  [gravOutput]
+
+
+escapeVelocity
+  {1-9}.{0-9}{0-9} km/s
+  {10-20}.{0-9}{0-9} km/s
+  {21-30}.{0-9}{0-9} km/s
+  {31-40}.{0-9}{0-9} km/s
+  {41-50}.{0-9}{0-9} km/s
+  {51-60}.{0-9}{0-9} km/s
+  {61-70}.{0-9}{0-9} km/s
+  {71-80}.{0-9}{0-9} km/s
+  {81-90}.{0-9}{0-9} km/s
+  {91-100}.{0-9}{0-9} km/s
+outputEscape
+  [escapeVelocity]
+
+rotationalPeriod
+  {1-4} Hour{s}
+  {4-8} Hours
+  {9-12} Hours^2
+  {13-23} Hours^3
+  {1-30} Day{s}^0.5
+  {50-364} Days^0.25
+  {1-10}Year{s}, {1-364} Day{s}^0.125
+  {50-1000} Years, {1-364} Day{s}^0.0625
+outputRotPeriod
+  [rotationalPeriod]
+
+orbitalPeriod
+  {10-100} Days
+  {100-200} Days^0.5
+  {300-364} Days^2
+  {1-9} Years, {100-364} Days^2
+  {2-10} Years, {100-364} Days^0.5
+  {10-50} Years, {100-364} Days^0.5
+  {50-99} Years, {100-364} Days
+  {100-500} Years, {100-364} Days
+outputOrbPeriod
+  [orbitalPeriod]
+
+specialFeatures
+  {Abandoned |Active |Massive |}{Weapons|Machinery} Test Range
+  {Ancient|Recent} {Battlefield|Crashed Starship}
+  Ancient {Shipwreck|Space Station|Wreckage}
+  Advanced Alien Artifact
+  Automated Defense Satellites
+  Crystalline {Forests|Canyons|Caves|Suspensions|Winds}
+  {Dense|Thick} {Fog|Mist|Smog|Clouds|Ash|Smoke|Dust|Sand|Snow|Rain|Hail|Sleet|Ash|Smoke|Dust|Sand|Snow|Rain|Hail|Sleet}
+  {Constant|Erratic|Extreme|Frequent|Periodic|Severe|Strange|Unpredictable|Unusual|Violent} {Chemical Activity|Electrical Activity|Electromagnetic Storms|Geological Activity|Ion Storms|Magnetic Activity|Pressure|Heavy Radiation|Meteor Showers|Radiation Exposure|Tectonic Activity|Storms|Temperatures Shifts|Tides|Volcanic Activity|Weather Patterns Shifts|Winds}
+  {a} {Colossal|Enormous|Massive} {Crater|Canyon|Desert|Forest|Jungle|Mountain|RainForest|Underground Ocean|Volcano}
+  A {Mysterious|Unique|Rare} {Relic|Artifact|Structure}
+  {Mesmerizing|Strange} {Rock Formations|Auroras}
+  Massive Lightning Storms
+  {Unique|Exotic|Fast Growing} {Groves of |}{Flora|Fungi}
+  {Exotic|Unique|Rare} {Flora|Fauna|Fungi|Herbs|Spices|Minerals|Precious Stones|Precious Metals|Elements|Gasses}
+  {Floating|Flying|Gliding|Hovering|Rocky|Sandy|Floating} {Islands|Rocks|Crystals}
+  {Deep|Winding} {Natural Cave|Subterranean Tunnel|Cave} System
+  Lava {Flows|Tubes|Fields|Pits|Pools|Spouts}
+  Marooned Colony
+  Moisture Heavy Atmostphere
+  Frequent Overcast Rainstorms
+  Planetary Rings
+  Rich in Minerals
+  {Evidence|Fossils|Remnants|Ruins} of {a} {Alien|Ancient|Forgotten|Unknown} {City|Civilization|Culture|Empire|Monument|Race|Species|Underground City}
+  {Abandoned for Millennia|Taken Over by Nature|}
+  {a} {Apocalypical|Worldwide {Nuclear|Biohazardous} War|AI Takeover|Invasion|Impact Event|Disaster}
+
+  Moon^3
+    1 Moon<br>	[name.selectOne.sentenceCase]^3
+    2 Moons<br>	[name.selectOne.titleCase]<br>	[name.selectOne.titleCase]^2
+    3 Moons<br>	[name.selectOne.titleCase]<br>	[name.selectOne.titleCase]<br>	[name.selectOne.titleCase] 
+    4 Moons<br>	[name.selectOne.titleCase]<br>	[name.selectOne.titleCase]<br>	[name.selectOne.titleCase]<br>	[name.selectOne.titleCase]
+    Tidally-Locked Moon<br>	[name.selectOne.titleCase]
+    Geosynchronous Moon<br>	[name.selectOne.titleCase]
+outputSpecial
+  [specialFeatures]
+  
+population
+  {1-9}.{0-9} Million
+  {10-25}.{0-9} Million
+  {26-50}.{0-9} Million
+  {51-99}.{0-9} Million
+  {100-250}.{0-9} Million
+  {251-999}.{0-9} Million
+  {1-9}.{0-9} Billion^3
+  {10-23}.{0-9} Billion^2
+outputPop
+  [population]
+
+techLevel
+  Atomic
+  Star-faring^3
+  Industrial
+  Pre-industrial
+  Archaic
+  Highly Advanced^1
+outputTech
+  [techLevel]
+
+resources
+  Abundant
+  Fair
+  Limited
+  None
+  Poor
+  Rich
+outputResources
+  [resources]
+
+economyOutput	
+//economy-Resources, Main Import, Main Export, Trade	
+  Agriculture^2	
+  Art	
+  Chemicals	
+  Entertainment	
+  Fuel	
+  Luxury Goods	
+  Manufactured Goods	
+  Military	
+  Natural Resources	
+  None	
+  Pharmaceuticals	
+  Rare {Gasses|Elements|Minerals|Precious Stones|Precious Metals|Herbs|Spices}^2	
+  Research	
+  Salvage	
+  Starships	
+  Technology	
+  Textiles	
+  Tourism	
+  Transportation	
+  Water	
+  Weapons
+  
+economy	
+  [economyOutput]	
+
+economicTrade
+  Equal
+  Favorable
+  Unfavorable
+  None
+  Deficit
+  Surplus
+outputTrade
+  [economicTrade]
+
+installations
+  Abandoned {Colony|Mine|Station}
+  Black Market
+  Corporate Headquarters
+  Criminal Base
+  Entertainment
+  Espionage Facility
+  Finance
+  Garrison ([affiliation])
+  Government Center
+  Government Research Facility
+  Healthcare
+  Manufacturing Plant
+  Mercenary Base
+  Military
+  Mining
+  Nature Preserve
+  Orbital Docks
+  Pirate Base
+  Planetary Defense Shield
+  Political Fanatics
+  Prison
+  Private Research Station
+  Protectorate Base
+  Rebel Base
+  Refugee Camp
+  Religious Center
+  Salvage Depot
+  Shipyards
+  Small Outpost
+  Survey Base
+  Terrorist Base
+  Trade Market
+  University
+outputInstallation
+  [installations]
+
+affiliation
+  Azandia Axis
+  Stebeck Concordance
+  The Cabal
+  The Imperium
+  The Kintari Consortium
+  Independant^2
+  Syndicate
+outputAffiliate
+  [affiliation]
+
+foreignRelations
+  Improving
+  N/A
+  Stable
+  Strong
+  Very Strong
+  Weak
+  Very Weak
+outputForeign
+  [foreignRelations]
+
+
+
+/////////////////////////////
+//----content d----//
+/////////////////////////////
+
+promptWorldImg
+  IMG_9854.CR2: The world is habitable. This is an unknown alien world alone against a star scattered background. It has a composition of ([composition]:1.7), [solarStats]NASA, James Webb Space Telescope Space, 4k, Ultra HD, High Resolution, Realistic, Photorealistic, Hyperrealistic, Detailed, Intricate, Complex, Sharp Focus, Depth of Field, Volumetric Lighting, Ray Tracing, Global Illumination, HDR, 8K, 16K, 32K, 64K, 128K, 256K, 512K, 1024K, 2048K, 4096K, 8192K, 16384K, 32768K, 65536K, 131072K, 262144K, (width:::600) (height:::600)
+  tags =  #orb #sphere  
+    //integrate these stats somehow [generateText(PlanetarySummaryPrompt)][generateText(composition)]
+  negativePrompt = blur, blurry image, motion blur, abstract, shadow, bad art, low quality, worst quality,
+  guidanceScale = 7
+
+  seed = -1 //(seed:::502474656)(seed:::307381076)
+//  size = auto
+outputWorldImg
+  [promptWorldImg] 
+
+//////////////////////
+//----content e----//
+/////////////////////
+//\n // this just adds an extra newline between the above text and the template below
+//EXAMPLE
+//fantasyCharacterPrompt
+//  instruction = Please create an interesting and creative OC [race] fantasy character including, name, age, etc.
+//  startWith = <b>Name:</b> // we start it off with a hint that we want the section names bolded using the HTML <b> tags
+//output
+//  [generateText(fantasyCharacterPrompt)]    
+
+PlanetarySummaryPrompt
+  instruction = Tell me about the planet [pName] in four to five sentences. Condense the content of [oAtmos]. Summarize [a]% Water, ([Ice]% Ice), [c]% [wtOne], [d]% [wtTwo],	[e]% [wtThree],	and the remaining water. It has a [b]% Landmass made of	[g]% [ltOne],	[h]% [ltTwo],	[i]% [ltThree] and other types of land. Special Features</b><br>▪	[sFeat]<br><b>Population</b>: [pop]<br><b>Tech Level</b>: [tlvl]<br><b>Economy</b><br>▪	<b>Resources</b>: [res]<br>▪	<b>Main Import</b>: [eOut]<br>▪	<b>Main Export</b>: [eOut2]<br>▪	<b>Trade</b>: [eTrad]<br><b>Installation{s}</b><br>▪	[install]<br><b>Affiliation</b>: [affil]<br><b>Foreign Relations</b>: [fRelat] into one paragraph with some commentary. Make it sound like a planetary summary from a science fiction novel. 
+  startWith = <b>Planetary Summary:</b>
+  stopSequences: [".", "!", "?"] 
+  endButtons = none
+
+
+atmospherePrompt
+  [worldseed]
+
+ecospherePrompt
+  instruction = Use the planet's name as determined by PlanetarySummary content = [pName] In the far future, humanity has regular contact with alien civilizations. You arrive on a habitable planet with a unique and thriving ecosphere. What types of plant life dominate the landscape—towering fungi, dense forests of alien flora, or vast plains of creeping, sentient vines? How do these organisms interact with their environment and adapt to survive? What kinds of creatures roam this world, and how do predator-prey dynamics shape their existence? Is the ecosystem stable, chaotic, or delicately balanced? How do alien civilizations influence or preserve the natural environment?  Write two to three paragraphs painting a vivid picture of this alien world’s ecosphere, making sure to bring it to life using rich sensory details and imaginative world-building.Use complete sentences.
+  endButtons = none
+
+
+hydrospherePrompt
+  instruction = Use the planet's name as determined by PlanetarySummary content = [pName] In the far future, humanity has regular contact with alien civilizations. You arrive on a habitable planet with a unique and thriving hydrosphere. Describe its dominant water systems—vast oceans, underground seas, or something entirely alien. What does the water feel like when touched? Does its scent, taste, or composition differ from Earth's? How does its appearance shift under the planet's sky? How does the weather interact with these waters—violent storms, eerie stillness, or unpredictable patterns? What kinds of aquatic life thrive here, and how have they adapted? Write two to three paragraphs painting a vivid picture of this alien world’s hydrosphere, making sure to bring it to life using rich sensory details and imaginative world-building.Use complete sentences.
+  stopSequences: [".", "!", "?"] 
+  endButtons = none
+
+
+naturalWondersPrompt
+  instruction = Use the planet's name as determined by PlanetarySummary content = [pName] In the far future, humanity has regular contact with alien civilizations. You arrive on a habitable alien planet—one with breathtaking natural wonders. Describe two or three spectacular landmarks shaped by geological, atmospheric, or biological forces. Are there vast crystal canyons, floating islands, a landscape of petrified waterfalls and mineral forests, or something entirely unique? How do these features interact with the environment, and what makes them awe-inspiring? Use rich sensory details and imaginative world-building to bring these wonders to life. Write two to three paragraphs painting a vivid picture of each landmark, making sure to bring it to life using rich sensory details and imaginative world-building.Use complete sentences.
+  stopSequences: [".", "!", "?"] 
+  endButtons = none
+
+
+placesOfInterestPrompt
+  instruction = Use the planet's name as determined by PlanetarySummary content = [pName] In the far future, humanity has regular contact with alien civilizations. You arrive on a habitable planet with remarkable constructed landmarks. Describe two or three awe-inspiring places—monuments, grand buildings, entertainment hubs, ancient ruins, or engineering marvels. What makes them significant? Are they cultural, historical, or technological wonders? How do they fit into the planet’s society?   Write two to three paragraphs painting a vivid picture of each location, making sure to bring it to life using rich sensory details and imaginative world-building.Use complete sentences.
+  stopSequences: [".", "!", "?"] 
+  endButtons = none
+//  instruction = Use the planet's name as determined by PlanetarySummary content = [pName] In the far future, humanity has regular contact with alien civilizations. Write two to three paragraphs painting a vivid picture of each of the following alien location, making sure to bring it to life using rich sensory details and imaginative world-building. [poiList.consumableList.selectMany(1,3).titleCase.joinItems("<br>")]
+
+intriguePrompt
+  instruction = Use the planet's name as determined by PlanetarySummary content = [pName] In the far future, humanity has regular contact with alien civilizations. On a habitable alien planet, two to three conflicts or strange and mysterious incidents have occurred. Are they political tensions between species, unexplained disappearances, an assassination attempt, or eerie phenomena defying science? Maybe a relic was unearthed with cryptic symbols no one can decipher, or an anomaly causes time to shift unpredictably. Write two to three paragraphs painting a vivid picture of each event, their impact on society, and any theories surrounding them, making sure to bring them to life using rich sensory details and imaginative world-building.Use complete sentences.
+  stopSequences: [".", "!", "?"] 
+  endButtons = none
+
+
+/////////////////////////////    
+//----content f----//
+/////////////////////////////
+
+accordionMenu
+  
+  *
+    atmosphereTab
+    title = <button>[icon("lightning-storm", "padding:2px")] Atmosphere</button>
+    content = 
+//content = <pre style="text-align:left;"><font face = 'TS Kirt', sans-serif;>[generateText(atmospherePrompt)]</font face = 'TS Kirt', sans-serif;>
+  *       
+    ecosphereTab
+    title = <button>[icon("zig-zag leaf", "padding:2px")] Ecosphere</button>
+    content = Vivamus fringilla dui purus, in lacinia ex varius sit amet. Sed vel lacinia est. Vivamus dolor sem, aliquam a libero eget, lacinia aliquam turpis. Nunc euismod enim lorem, a efficitur mauris ultrices in. In vitae dolor a felis molestie hendrerit in quis dolor. Morbi id lacus at mi maximus auctor. Vestibulum eget tristique dolor, vitae feugiat arcu. Ut sodales enim augue, ac cursus erat egestas nec. Integer eget massa quis metus mattis tincidunt eu sit amet neque. {1-100000000} [pName]
+//content = <pre style="text-align:left;"><font face = 'TS Kirt', sans-serif;>[generateText(ecospherePrompt)]</font face = 'TS Kirt', sans-serif;>
+  *    
+    hydrosphereTab
+    title = <button>[icon("droplet", "padding:2px")] Hydrosphere</button>
+    content = Vivamus fringilla dui purus, in lacinia ex varius sit amet. Sed vel lacinia est. Vivamus dolor sem, aliquam a libero eget, lacinia aliquam turpis. Nunc euismod enim lorem, a efficitur mauris ultrices in. In vitae dolor a felis molestie hendrerit in quis dolor. Morbi id lacus at mi maximus auctor. Vestibulum eget tristique dolor, vitae feugiat arcu. Ut sodales enim augue, ac cursus erat egestas nec. Integer eget massa quis metus mattis tincidunt eu sit amet neque. {1-100000000} [pName]
+//content = <pre style="text-align:left;"><font face = 'TS Kirt', sans-serif;>[generateText(hydrospherePrompt)]</font face = 'TS Kirt', sans-serif;>
+  *
+    naturalWondersTab
+    title = <button>[icon("crystals", "padding:2px")] Natural Wonders</button>
+    content = Vivamus fringilla dui purus, in lacinia ex varius sit amet. Sed vel lacinia est. Vivamus dolor sem, aliquam a libero eget, lacinia aliquam turpis. Nunc euismod enim lorem, a efficitur mauris ultrices in. In vitae dolor a felis molestie hendrerit in quis dolor. Morbi id lacus at mi maximus auctor. Vestibulum eget tristique dolor, vitae feugiat arcu. Ut sodales enim augue, ac cursus erat egestas nec. Integer eget massa quis metus mattis tincidunt eu sit amet neque. {1-100000000} [pName]
+//content = <pre style="text-align:left;"><font face = 'TS Kirt', sans-serif;>[generateText(naturalWondersPrompt)]</font face = 'TS Kirt', sans-serif;>
+  *
+    placesOfInterestTab
+    title = <button>[icon("pyramids", "padding:2px")] Places of Interest</button>
+    content = Vivamus fringilla dui purus, in lacinia ex varius sit amet. Sed vel lacinia est. Vivamus dolor sem, aliquam a libero eget, lacinia aliquam turpis. Nunc euismod enim lorem, a efficitur mauris ultrices in. In vitae dolor a felis molestie hendrerit in quis dolor. Morbi id lacus at mi maximus auctor. Vestibulum eget tristique dolor, vitae feugiat arcu. Ut sodales enim augue, ac cursus erat egestas nec. Integer eget massa quis metus mattis tincidunt eu sit amet neque. {1-100000000} [pName]
+//content = <pre style="text-align:left;"><font face = 'TS Kirt', sans-serif;>[generateText(placesOfInterestPrompt)]</font face = 'TS Kirt', sans-serif;>
+  *
+    intrigueTab
+    title = <button>[icon("hood", "padding:2px")] Intrigue</button>
+    content = Vivamus fringilla dui purus, in lacinia ex varius sit amet. Sed vel lacinia est. Vivamus dolor sem, aliquam a libero eget, lacinia aliquam turpis. Nunc euismod enim lorem, a efficitur mauris ultrices in. In vitae dolor a felis molestie hendrerit in quis dolor. Morbi id lacus at mi maximus auctor. Vestibulum eget tristique dolor, vitae feugiat arcu. Ut sodales enim augue, ac cursus erat egestas nec. Integer eget massa quis metus mattis tincidunt eu sit amet neque. {1-100000000} [pName]
+//content = <pre style="text-align:left;"><font face = 'TS Kirt', sans-serif;>[generateText(intriguePrompt)]</font face = 'TS Kirt', sans-serif;>
+
+//This is what converts the above list into nice HTML.
+// All credit for design goes to: https://codepen.io/keithpickering/pen/PeBpwG
+accordion = [accordionMenu.selectAll.map(makeHTML).joinItems()] //
+makeHTML (accordionMenu) => 
+  return `<details class="details">
+		<summary class="details__summary">${accordionMenu.title}</summary>
+		<div class="details__content">
+			${accordionMenu.content}
+		</div>
+	</details>`;
+
+
+
+
+
+//content = <font color=white>[tap(atmosphereButton, "button")]</font color=white></button></b><BR>
+//atmosphereButton
+//EXPLORE</button><br></font color>[generateText(atmospherePrompt)]
+
+/////////////////////////////  
+//----content g----//
+////////////////////////////
+name
+  {A|E|I|O|U}{a-z}{a|e|i|o|u}
+  {A-Z}{a|e|i|o|u}{a-z}
+  {A|E|I|O|U}{a-z}{a|e|i|o|u}{a-z}
+  {A-Z}{a|e|i|o|u}{a-z}{a|e|i|o|u}
+  {A|E|I|O|U}{a-z}{a|e|i|o|u}{a-z}{a|e|i|o|u}
+  {A-Z}{a|e|i|o|u}{a-z}{a|e|i|o|u}{a-z}
+  {A|E|I|O|U}{a-z}{a|e|i|o|u}{a-z}{a|e|i|o|u}{a-z}
+  {A-Z}{a|e|i|o|u}{a-z}{a|e|i|o|u}{a-z}{a|e|i|o|u}
+  {A|E|I|O|U}'{a-z}{a|e|i|o|u}^0.25
+  {A-Z}'{a|e|i|o|u}{a-z}^0.25
+  {A|E|I|O|U}{a-z}'{a|e|i|o|u}{a-z}^0.25
+  {A-Z}{a|e|i|o|u}'{a-z}{a|e|i|o|u}^0.25
+  {A|E|I|O|U}{a-z}'{a|e|i|o|u}{a-z}{a|e|i|o|u}^0.25
+  {A-Z}{a|e|i|o|u}'{a-z}{a|e|i|o|u}{a-z}^0.25
+  {A|E|I|O|U}{a-z}{a|e|i|o|u}'{a-z}{a|e|i|o|u}{a-z}^0.25
+  {A-Z}{a|e|i|o|u}{a-z}'{a|e|i|o|u}{a-z}{a|e|i|o|u}^0.25  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<!--////figure this out////https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sticky_header-->
+
+
+<!--<button onclick="update()">randomize</button>-->
+[favicon("https://user-uploads.perchance.org/file/7cbb8a73ae98032b93cc2badf5553d77.webp")]
+[background("https://user-uploads.perchance.org/file/7fd37c00a22f319597c21d3ec3bbf650.jpg")]
+[layoutMaker(layoutScreen)]
+<html>
+<style>
+table, th, td {
+  overflow-y: hidden;
+  overflow-x:hidden;
+  overflow-wrap: break-word;
+  overflow-anchor: auto;
+  border:1px solid black;
+  border-collapse: collapse;
+  vertical-align: top;
+  text-align:left;	
+  list-style: bullets;
+  padding-left: 48px;
+  outline: 0;
+  cursor: pointer;
+  color: white;
+  transition: color 300ms ease-in-out;
+  font-family: TS Kirt;
+
+}
+</style>
+<body>
+[fullscreenButton(icon(("battery-positive")), (icon("battery-negative")), "position:fixed; top:0.5rem; left:0.5rem;")]
+<style type="text/css">* {cursor: url(https://ani.cursors-4u.net/cursors/cur-13/cur1160.ani), url(https://ani.cursors-4u.net/cursors/cur-13/cur1160.png), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2018/06/08/hell-yeah-pointer-3.html" target="_blank" title="Hell Yeah Pointer 3"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Hell Yeah Pointer 3" style="position:absolute; top: 0px; right: 0px;" /></a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Import Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/enter-sansman" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ts-kirt" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Apply Enter Sansman to headings */
+    h1, h2, h3 {
+      font-family: 'Enter Sansman', sans-serif;
+      color: crimson  ; /* A dark gray for contrast */
+    }
+    /* Apply TS Kirt to Subtitle */
+    h4 {
+      font-family: 'TS Kirt', sans-serif;
+      color: crimson;
+      font-size: 1.2rem; /* Adjust size for readability */
+      line-height: 1.6; /* Improve spacing for easier reading */
+    }
+    /* Apply Enter Sansman to summary sections */
+    summary.details__summary {
+      font-family: 'Enter Sansman', sans-serif;
+      color: crimson
+    }
+    /* Apply TS Kirt to body text */
+    details {
+      font-family: 'TS Kirt', sans-serif;
+      color: white;
+      font-size: 16px; /* Adjust size for readability */
+      line-height: 1.6; /* Improve spacing for easier reading */
+      margin: 0;
+      padding: 5px;
+
+    }
+
+    /* Styling for buttons */
+    button {
+      font-family: 'Enter Sansman', sans-serif;
+      font-size: 12px;
+      padding: 5px 5px;
+      background-color: black; /* Accent color for buttons */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white; /* Added text color for buttons */
+    }
+    button:hover {
+      background-color: crimson;
+      text-decoration: none;
+      color: black;
+    }
+    
+  </style>
+</head>
+</html>
+  
+  
+<!---Accordion Menu--->
+<br><br><br><br>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css?family=Oswald:300|Roboto:300,500");
+html, body {
+  min-height: 100%;
+}
+
+html {
+  font-size: 18px;
+}
+  
+body {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: 'TS Kirt', sans-serif;
+  line-height: 1.4;
+  color: #546E7A;  // textbox and summary
+  background-color: #ECEFF1;
+}
+
+p, ul, li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 24px;
+}
+p:last-child, ul:last-child, li:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: crimson;
+}
+
+code {
+  background: #ECEFF1;
+}
+
+.wrapper {
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4px;
+}
+  
+@media (max-width: 640px) {
+  .wrapper {
+    padding-left: 10px;
+    padding-right:10px;
+  }
+}
+
+.details-group {
+  border: 1px solid ;
+  border-radius: 5px;
+  background-color: ;
+}
+
+.details {
+  overflow: hidden;
+  border-bottom: 0px solid ;
+  transition: height 300ms ease-in-out;
+}
+.details:last-child {
+  border-bottom: 0;
+}
+.details__summary, .details__content {
+  padding: 2px;
+}
+.details__summary {
+  position: relative;
+  list-style: none;
+  padding-left: 48px;
+  outline: 0;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: 'TS Kirt', sans-serif;
+  font-weight: 1000;
+  color: #37474F;
+  text-transform: uppercase;
+  transition: color 300ms ease-in-out;
+}
+[open] > .details__summary {
+  color: crimson;
+}
+.details__summary::-webkit-details-marker {
+  display: none;
+}
+.details__summary:before, .details__summary:after {
+  content: "";
+  position: absolute;
+}
+.details__summary:before {
+  left: 20px;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  width: 16px;
+  background: crimson;
+}
+.details__summary:after {
+  left: 28px;
+  top: 50%;
+  height: 16px;
+  margin-top: -8px;
+  width: 2px;
+  margin-left: -1px;
+  background: crimson;
+  transition: all 300ms ease-in-out;
+}
+[open] .details__summary:after {
+  opacity: 0;
+  transform: translateY(25%);
+}
+  .details__content {
+  block-size: 250px;
+  padding-top: 0;
+  padding-left: 48px;
+  overflow-anchor: auto;
+  overflow-y: scroll;
+  scrollbar-color: crimson black;
+  scrollbar-width: thin;
+  overflow-wrap: break-word;
+  color: white;
+  font-family: TS Kirt;
+  writing-mode: horizontal-tb;
+}
+  
+details, summary {
+  text-align:left;	
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: letter;
+    border: 1px solid black;
+    margin: 1em;
+
+  }
+  
+  body, html {
+    background-color: white !important;
+    background-image: none !important;
+    color: black;
+  }
+  
+  /* Hide cursor elements */
+  a[href^="https://www.cursors-4u.com"], 
+  a[href^="https://www.cursors-4u.com"] img {
+    display: none !important;
+  }
+  
+  /* Force all accordion content to be visible */
+  details {
+    height: auto !important;
+    border: 1px solid black;
+  }
+  
+  .details__content {
+    height: auto !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+    color: black !important;
+    background-color: white !important;
+    border: none !important;
+    padding-top: 10px !important;
+  }
+  
+  .details__summary {
+    color: black !important;
+    font-weight: bold !important;
+    border-bottom: 1px solid black !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Remove transition effects during print */
+  .details, .details__summary:before, .details__summary:after {
+    transition: none !important;
+  }
+  
+  /* Hide navigation elements */
+  #printBtn {
+    display: none !important;
+  }
+  #EXPLORE {
+    display: none !important;
+  }
+}
+</style>
+
+
+
+<!------>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const accordions = document.querySelectorAll('details.details');
+
+  accordions.forEach(details => {
+    const summary = details.querySelector('summary');
+
+    summary.addEventListener('click', event => {
+      event.preventDefault(); // Prevent instant open
+
+      const isOpening = !details.hasAttribute('open');
+
+      // First, close all others
+      accordions.forEach(d => {
+        if (d !== details) {
+          d.style.height = '3.5em';
+          d.removeAttribute('open');
+        }
+      });
+
+      if (isOpening) {
+        // Open this one
+        details.setAttribute('open', 'true');
+        const fullHeight = details.scrollHeight;
+        details.style.height = '3.5em'; // Start small
+        requestAnimationFrame(() => {
+          details.style.height = fullHeight + 'px';
+        });
+      } else {
+        // Close this one
+        const currentHeight = details.offsetHeight;
+        details.style.height = currentHeight + 'px';
+        
+        requestAnimationFrame(() => {
+          details.style.height = '3.5em';
+        });
+
+        setTimeout(() => {
+          details.removeAttribute('open');
+        }, 400);
+      }
+    });
+  });
+});
+</script>
+
+<!-- Print preparation function -->
+<script>
+function prepareForPrint() {
+  // Expand all accordions before printing
+  const accordions = document.querySelectorAll('details.details');
+  
+  accordions.forEach(details => {
+    // Open all accordion items
+    details.setAttribute('open', 'true');
+    
+    // Reset height styles to show all content
+    details.style.height = 'auto';
+    
+    // Remove any rotating icons
+    const summary = details.querySelector('.details__summary');
+    if (summary) {
+      summary.style.setProperty('--print-state', 'open');
+    }
+  });
+  
+  // Brief delay to allow DOM updates before printing
+  setTimeout(() => {
+    window.print();
+  }, 500);
+}
+</script>
+
+</script>
+
+</body>
+</html>
+<!-- Fix for [pp][ps] not updating when EXPLORE button is clicked -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Find the EXPLORE button
+  const buttons = document.querySelectorAll('button');
+  for(let i = 0; i < buttons.length; i++) {
+    if(buttons[i].textContent.includes('EXPLORE')) {
+      // Found the EXPLORE button, add additional click handler
+      const button = buttons[i];
+      
+      // Store original click handler
+      const originalClick = button.onclick;
+      
+      // Replace with new handler
+      button.onclick = function(event) {
+        console.log('EXPLORE button clicked, forcing refresh to update [pp][ps]');
+        
+        // Call original handler if it exists
+        if(originalClick) {
+          originalClick.call(this, event);
+        }
+        
+        // Force a refresh to update [pp][ps]
+        location.reload();
+      };
+      
+      console.log('Added reload handler to EXPLORE button to fix [pp][ps] update issue');
+      break;
+    }
+  }
+});
+</script>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
