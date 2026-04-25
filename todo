@@ -95,8 +95,8 @@ I’m grouping them by domain so you can see the shape of your engine.
 •	Biome specific roles
 •	Biomes that adapt to tectonic elevation
 •	biome variations (via micro climates + extremes)
-➕ Partially Complete
 •	Biome Transition Smoothing
+➕ Partially Complete
 •	Natural transitions
 •	biome variations (could be expanded)
 ✚ Not Yet Implemented
@@ -111,6 +111,8 @@ I’m grouping them by domain so you can see the shape of your engine.
 •	Regional history
 •	Civilization Development Summary (via history + climate + geology)
 •	Strategic Importance (implicitly via roles + climate + geology)
+•	Trade Route & Migration Path Generator
+•	World Formation Narrative Ties geology + climate + history into a single story.
 ➕ Partially Complete
 •	Civilization Density
 •	civilization presence levels
@@ -118,12 +120,9 @@ I’m grouping them by domain so you can see the shape of your engine.
 •	Culture generators
 •	Regional Culture Generator (languages, traditions, architecture)
 •	Migration paths
-•	Trade routes
-•	Trade Route & Migration Path Generator
 ✚ Not Yet Implemented
 •	Cultural Archetype Generator
 •	combined World History Summary (geology + climate + biomes)
-•	World formation narrative (climate + tectonics + history)
 🗺 CONTINENTS & LANDSCAPE
 ✔ Completed
 •	Continent Summary Generator
@@ -177,17 +176,15 @@ Your engine now includes:
 This is already a world class procedural generator.
 ⭐ What I recommend next (based on impact)
 If you want the biggest “wow” upgrades:
-🔥 1. Biome Transition Smoothing
-Makes the world feel more natural.
-🔥 2. Trade Route & Migration Path Generator
-Makes the world feel alive.
-🔥 3. World Formation Narrative
-Ties geology + climate + history into a single story.
+
 🔥 4. Biome Driven Culture Generator
 Makes each region culturally distinct.
-If you want, I can generate any of these next.
-Just tell me which one you want to tackle.
+(languages, architecture, food, clothing, social structure)
 
+🔥 5. World History Summary
+(geology + climate + biomes + trade + migration → one timeline)
+
+Which direction do you want to go next?
 
 bestiary
 canvas
@@ -207,7 +204,9 @@ tectonic simulation
 Wind‑driven moisture transport
 World Summary Coding narrative engine
 World Summary panel that generates a short, lore‑style description
-
+climate‑aware biome chains
+multi‑pass smoothing
+climate‑aware blending (e.g., desert ↔ savanna ↔ grassland chains)
 
 seed driven center region
 This means:
