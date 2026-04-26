@@ -646,11 +646,6 @@ add wind driven gradients
 add tectonic influence
 
 
-
-
-Example Region Output
-Name: The Silver Steppe Type: Steppe Country Biome: Temperate Grassland Elevation: Rolling Highlands Moisture: Seasonal Rains Climate Pattern: Cold air drainage valleys Sub Features: a deep limestone gorge; a chain of crater lakes Special Feature: Ancient ley line scars Narrative Hook: Hunters claim the forest moves at night. Short Description: A windswept expanse of rolling highlands shaped by cold air drainage valleys. Seasonal rains feed a deep limestone gorge and a chain of crater lakes. Ancient ley line scars cut across the land, and locals whisper that the nearby forest moves after dusk.
-
 If you want, we can now add:
 •	a continent description generator
 •	a biome heatmap preview (text based or color blocks)
@@ -660,11 +655,88 @@ If you want, we can now add:
 •	or even a map canvas that draws shapes based on the seed
 
 
+Example Region Output
+Name: The Silver Steppe Type: Steppe Country Biome: Temperate Grassland Elevation: Rolling Highlands Moisture: Seasonal Rains Climate Pattern: Cold air drainage valleys Sub Features: a deep limestone gorge; a chain of crater lakes Special Feature: Ancient ley line scars Narrative Hook: Hunters claim the forest moves at night. Short Description: A windswept expanse of rolling highlands shaped by cold air drainage valleys. Seasonal rains feed a deep limestone gorge and a chain of crater lakes. Ancient ley line scars cut across the land, and locals whisper that the nearby forest moves after dusk.
 
 
-
-
-
-
-
-
+Checklist 10
+➕ Partially Complete
+✚ Not Yet Implemented
+add a canvas renderer
+Atlas entry generator
+Auto writes a short world description from the decoded seed
+Bestiary & Cultures
+Bestiary generator
+biome blending
+biome derives from climate
+Biome Driven Fauna & Flora Generator
+Biome Heatmap with more visual interest, latitude variation, noise variation, wind driven gradients, tectonic influence
+Biome Linked Settlement Patterns
+Biome Linked Trade Goods
+biome specific features
+biome variations (could be expanded)
+Biome‑Driven Culture Generator (languages, architecture, food, clothing, social structure)
+Break the continent into 6–20 regions
+canvas (you use it for maps, but not for shapes yet)
+canvas has responsive scaling, larger maps, dynamic resizing
+Canvas maps (optional)
+Canvas‑Based (drawing API)
+Canyon systems
+Civilization Density
+civilization presence levels
+Climate & biome summary generator
+combined panels (climate + geology + history)
+Continent Shape Generator
+Cultural Archetype Generator
+Cultural or Narrative Seeds
+Derived from elevation + moisture + seed latitude
+Detail Scale Systems (Texture)
+Distance from coast (for climate weighting)
+downloadable world summary
+elevation specific features
+Elevation tier refinement (foothills, mid‑mountains, high peaks)
+elevation variations
+erosion + sediment deposition
+Export summaries (optional)
+fauna + flora tables
+Feature name variety by using twists, biome specific features, elevation specific features, randomization, latitude, moisture, tectonics
+full atlas UI
+Full illustrated style writeups
+Hydrology‑driven modifiers
+in depth region level flavor text
+Keep global traits, but add more randomness This keeps the world consistent, but makes each region more unique
+Landform & feature generator
+Landmarks panel full of named, memorable places
+latitude‑based biome bands to the hex map
+Local storage for world history
+Lore Narrative Driven
+Lore Scale Systems (Worldbook)
+Magical anomaly creatures
+Make regions more detailed
+Make regions more procedural
+Make regions more structured
+map canvas that draws shapes based on the seed
+map export (PNG/SVG)
+map linked version (regions highlight when hovered)
+Mountain Density Score
+Myths
+Named Landmark Generator (The Throat of the World, The Ember Teeth, The Coral Crown)
+Natural transitions
+Planetary Heat Budget
+polished UI with tabs
+Procedural Region Naming
+readable descriptions using lookup tables
+Region based creatures
+Region Names get more variety by using twist, random syllables, biome, elevation, latitude, moisture, tectonics, hydrology, noise variation
+Regional Culture Generator (languages, traditions, architecture)
+Save/load seeds
+special Feature variations
+start on coastline generation to make land/sea shapes more intentional
+Sub Features (Terrain Details)
+Tabs or collapsible sections
+Ties geology + climate + history into a single story
+UI Enhancements (Polish)
+UI polish for seed input/output
+Volcanic Province Generator (lava fields, calderas, island arcs)
+World Summary Coding narrative engine
+Worldbook export
